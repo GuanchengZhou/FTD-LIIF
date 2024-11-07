@@ -191,22 +191,10 @@ def main(config_, save_path):
         log(', '.join(log_info))
         writer.flush()
 
-import random
-import numpy as np
-def seed_everything(seed = 1):
-    print('seed', seed)
-    random.seed(seed)
-    np.random.seed(seed)
-    torch.manual_seed(seed)
-    torch.cuda.manual_seed(seed)
-    torch.cuda.manual_seed_all(seed)
-    torch.backends.cudnn.deterministic = True
-
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--config')
     parser.add_argument('--name', default=None)
-    parser.add_argument('--seed', type=int, default=3407)
     parser.add_argument('--gpu', default='0')
     args = parser.parse_args()
 
