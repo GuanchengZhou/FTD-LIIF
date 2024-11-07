@@ -17,16 +17,15 @@ Recently, arbitrary-scale image super-resolution (ASSR) has garnered significant
 
 ## Quick Start
 1. Download the pretrained models from ... and place the files in `./checkpoints`.
-2. Test on DIV2K:
+2. Download from the [DIV2K official website](https://data.vision.ee.ethz.ch/cvl/DIV2K/) and place the files in the `./load` folder. Both DIV2K_train_HR and DIV2K_valid_HR are needed.
+3. Test on DIV2K:
 `python test_lrtfr.py --config configs\test\test-div2k-2.yaml --model checkpoints/checkpoints\rdn_tucker-liif.pth`
-3. Generate the SR result for a single image:
+1. Generate the SR result for a single image:
 `python demo_lrtfr.py`
 
 
 ## Training & Testing
 ### 
-1. Download from the [DIV2K official website](https://data.vision.ee.ethz.ch/cvl/DIV2K/) and place the files in the `./load` folder. Both DIV2K_train_HR and DIV2K_valid_HR are needed.
+1. Train your model: `python ./train_liif_lrtfr.py --config ./configs/train-liiflrtfr/train_edsr-baseline-liiflrtfr-tucker.yaml`.
 
-2. Train your model: `python ./train_liif_lrtfr.py --config ./configs/train-liiflrtfr/train_edsr-baseline-liiflrtfr-tucker.yaml`.
-
-3. Test your model: `python ./test_lrtfr.py --config ./configstest\test-div2k-2.yaml --model .\save\train_edsr-baseline-liiflrtfr-tucker\epoch-last.pth`
+2. Test your model: `python ./test_lrtfr.py --config ./configstest\test-div2k-2.yaml --model .\save\train_edsr-baseline-liiflrtfr-tucker\epoch-last.pth`
