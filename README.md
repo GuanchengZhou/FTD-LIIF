@@ -26,6 +26,7 @@ Recently, arbitrary-scale image super-resolution (ASSR) has garnered significant
 
 ## Training & Testing
 ### 
-1. Train your model: `python ./train_liif_lrtfr.py --config ./configs/train-liiflrtfr/train_edsr-baseline-liiflrtfr-tucker.yaml`.
+1. Download the pretrained encoders from ... and place the files in `./weights`.
+2. Train your model: `python ./train_liif_lrtfr.py --config ./configs/train-liiflrtfr/train_edsr-baseline-liiflrtfr-tucker.yaml`.
 
 2. Test your model: `python ./test_lrtfr.py --config ./configstest\test-div2k-2.yaml --model .\save\train_edsr-baseline-liiflrtfr-tucker\epoch-last.pth`
