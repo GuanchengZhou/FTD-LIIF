@@ -5,11 +5,12 @@ This repository contains the official PyTorch implementation for the paper "Effi
 <div align="center">
   <img src="figs/main.png" alt="Framework" />
   <br>
-  Framework of our FTD-LIIF method
+  Framework of our method
 </div>
 
 ## Abstract
-Recently, arbitrary-scale image super-resolution (ASSR) has garnered significant attention. Existing ASSR methods use an MLP to query a heavy spatial coordinate matrix, leading to a quadratic surge in computational costs w.r.t. the image scale. In this work, we propose a novel functional tensor decomposition (FTD)-based ASSR approach, which employs different MLPs to query separable spatial coordinate vectors to run the decoder MLPs much fewer times, followed by tensor Tucker or CP decompositions to integrate the resulting factor matrices. The proposed method leverages the inherent low-rank prior of the image, thereby achieving substantially lower computational costs and generally superior generalization capabilities. Extensive experimental results demonstrate that our method significantly accelerates the classical local implicit function method and achieves higher ASSR performances in most cases. Moreover, the proposed FTD method exhibits notably stronger few-shot generalization abilities with smallscale training datasets attributed to the encoded low-rank prior. Code is available in supplementary.
+Existing arbitrary-scale super-resolution (ASSR) methods suffer from quadratic computational complexity w.r.t. image scale due to the reliance on multi-layer perceptrons (MLPs) to query dense spatial coordinate matrices. The inefficiency becomes particularly pronounced when extending to high-dimensional imaging modalities. To address these limitations, we propose a novel functional tensor decomposition (FTD) framework that fundamentally reconfigures the computational paradigm for ASSR. Specifically, we propose 1) a separation mechanism that employs distinct MLPs to query separable spatial coordinate vectors, substantially reducing decoder MLP invocations, and 2) functional tensor Tucker or CP decompositions for efficient factor matrix integration. The FTD framework delivers three key advantages: 
+1) Superior scalability to high-dimensional imaging modalities, such as hyperspectral images (HSIs), by virtue of the FTD design; 2) Significantly enhanced inference speed across scales; 3) Faster convergence towards a desired training model. Extensive experiments validate FTD's exceptional performance in HSI joint spatial-spectral ASSR, achieving up to 90.04\% reduction in inference time and substantial performance improvements. For conventional image ASSR, our method improves both inference speed and convergence efficiency, achieving up to 88.82\% inference time reduction and superior few-shot generalization capabilities due to faster convergence.
 
 ## Environments
 - python >= 3.10
