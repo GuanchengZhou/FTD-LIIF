@@ -16,10 +16,10 @@ Existing arbitrary-scale super-resolution (ASSR) methods suffer from quadratic c
 - pytorch >=2.4.0
 
 ## Quick Start
-1. Download the pretrained models and place the files in `./checkpoints`.
+1. Download the pretrained models from [GoogleDrive](https://drive.google.com/drive/folders/1EUlG1glsQNv7cW-fOijc5hxnCvxc9UrU?usp=drive_link) and place the files in `./checkpoints`.
 2. Download from the [DIV2K official website](https://data.vision.ee.ethz.ch/cvl/DIV2K/) and place the files in the `./load` folder. Both DIV2K_train_HR and DIV2K_valid_HR are needed.
 3. Test on DIV2K:
-`python test_lrtfr.py --config configs\test\test-div2k-2.yaml --model checkpoints/checkpoints\rdn_tucker-liif.pth`
+`python test_lrtfr.py --config configs\test\test-div2k-2.yaml --model checkpoints/checkpoints/[checkpoint_name]`
 1. Generate the SR result for a single image:
 `python demo_lrtfr.py`
 
